@@ -1,0 +1,663 @@
+/* Global Style */
+
+:root {
+  --first-color: #52cbcb;
+  --second-color: #002345;
+  --link-color: #fff;
+  --paragraf-color: #486683;
+  /* --heading-color: #555; */
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+}
+
+a {
+  color: var(--link-color);
+  transition: 0.6s ease;
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: var(--link-color);
+}
+
+h1,
+h2,
+h3,
+h5,
+h5,
+h6 {
+  color: var(--second-color);
+}
+
+p {
+  color: var(--paragraf-color);
+}
+
+/* Global Style */
+
+/* ==================== Start Header Top ==================== */
+.header-top {
+  background: var(--second-color);
+  padding: 10px 0;
+}
+
+.header-top ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header-top ul li {
+  display: inline-block;
+  color: var(--link-color);
+  font-size: 14px;
+  margin-right: 20px;
+}
+
+/* ==================== End Header Top ==================== */
+
+/* ==================== Start Navbar ==================== */
+.navbar {
+  box-shadow: 0 0 0px 1px #d9d9d9;
+}
+.navbar .nav-link {
+  color: #595f67;
+  font-size: 15px;
+}
+
+.navbar-brand img {
+  height: 42px;
+}
+
+.navbar_fixed {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  z-index: 1000;
+  border-bottom: 1px solid #ddd;
+  transition: background 2s ease;
+}
+
+.navbar_fixed .nav-link {
+  color: #595f67;
+  font-size: 15px;
+}
+
+.navbar .active,
+.navbar :hover,
+.navbar_fixed .active {
+  color: var(--first-color);
+}
+
+.navbar-toggler {
+  outline: none !important;
+}
+
+.fa-align-justify {
+  color: #333 !important;
+}
+
+.navbar .dropdown-item {
+  font-size: 14px;
+  color: #595f67;
+}
+
+.dropdown-item:focus,
+.dropdown-item:hover {
+  background: none;
+  color: var(--first-color);
+}
+
+.dropdown-menu.show {
+  border-radius: 0;
+  border: none;
+  /* box-shadow: 2px -2px 3px 0px #2a4f7e3b; */
+  box-shadow: 1px 1px 5px 2px #2a4f7e3b;
+}
+
+@media (min-width: 992px) {
+  .animate {
+    animation-duration: 0.3s;
+    -webkit-animation-duration: 0.3s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes slideIn {
+  0% {
+    -webkit-transform: transform;
+    -webkit-opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    -webkit-opacity: 1;
+  }
+  0% {
+    -webkit-transform: translateY(1rem);
+    -webkit-opacity: 0;
+  }
+}
+
+.slideIn {
+  -webkit-animation-name: slideIn;
+  animation-name: slideIn;
+}
+
+.lang {
+  display: flex;
+  position: relative;
+}
+.lang::before {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 30px;
+  background: var(--second-color);
+  left: 56px;
+  top: 6px;
+}
+
+/* ==================== End Navbar ==================== */
+
+/*==================== Start Icons ====================*/
+.fix-icons {
+  position: fixed;
+  top: 40%;
+  text-align: center;
+  z-index: 2222;
+}
+
+.fix-icons a {
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: 25px;
+  /* border-radius: 0 15px 15px 0; */
+}
+
+.tooltip-inner {
+  background-color: var(--first-color);
+}
+.tooltip.bs-tooltip-right .arrow:before {
+  border-right-color: var(--first-color) !important;
+}
+
+.fix-icons a:nth-of-type(1) {
+  background-color: #4267b2;
+}
+
+.fix-icons a:nth-of-type(2) {
+  background-color: #8f150c;
+}
+
+.fix-icons a:nth-of-type(3) {
+  background-color: #4ac959;
+}
+
+/*==================== End Icons ====================*/
+
+/* ==================== Start Full Img ==================== */
+.landing-page {
+  width: 100%;
+  height: 100vh;
+  background: #002345;
+  position: relative;
+  overflow: hidden;
+}
+.landing-page::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../images/bac.jpg) no-repeat;
+  background-size: cover;
+  opacity: 0.3;
+  animation: anim 25s linear infinite;
+}
+
+.page-content {
+  position: absolute;
+  top: 60%;
+  left: 37%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 100%;
+  max-width: 800px;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+.page-content h1 {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 45px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+.page-content p {
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 2;
+}
+.page-content a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--first-color);
+  border: 2px solid var(--first-color);
+  text-transform: uppercase;
+  padding: 10px 20px;
+  transition: 0.4s linear;
+}
+.page-content a:hover {
+  color: #fff;
+  background: var(--first-color);
+}
+.text {
+  padding: 10px;
+  text-align: justify;
+}
+.text div {
+  margin-bottom: 6px;
+}
+
+/* ==================== End Full Img ==================== */
+
+/* ==================== Start Global Info ==================== */
+.global-info {
+  padding: 100px;
+  background: var(--first-color);
+}
+
+.global-info img {
+  width: 80px;
+  height: 80px;
+}
+
+.global-info h6 {
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--link-color);
+}
+
+/* ==================== End Global Info ==================== */
+
+/* ==================== Start Services ==================== */
+.services {
+  padding: 100px 0;
+}
+
+.services .card img {
+  height: 250px;
+}
+
+.services .card {
+  border: none;
+  box-shadow: 3px 3px 11px 0px #bcbcbc;
+  border-radius: 10px 0 20px 0;
+  margin-bottom: 30px;
+  padding: 10px;
+  text-align: center;
+  height: 450px;
+  transition: all 0.6s;
+}
+
+.services .card:hover {
+  box-shadow: -17px 20px 11px -14px #00bcd447;
+}
+
+.services .card .card-text {
+  font-size: 13px;
+  line-height: 2;
+}
+
+.heading-main p {
+  max-width: 630px;
+  margin: auto;
+}
+
+/* ==================== End Services ==================== */
+
+/* --------- Start About Us --------- */
+
+.about {
+  margin-bottom: 30px;
+}
+
+iframe {
+  width: 100%;
+  height: 450px;
+}
+
+.about .about-info i {
+  background: #00bcd42e;
+  padding: 4px;
+  color: var(--main-color);
+  border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
+  font-size: 12px;
+}
+
+.about .about-info p:hover i {
+  background: var(--first-color);
+  color: var(--link-color);
+}
+
+.about .about-info h5 {
+  color: var(--second-color);
+  font-weight: 600;
+}
+
+.about .about-info p {
+  margin-top: 15px;
+  padding: 7px 0;
+  font-size: 13px;
+}
+
+.about .about-info button {
+  background: var(--second-color);
+  border: none;
+  color: var(--link-color);
+  padding: 10px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  box-shadow: none;
+  outline: none;
+  transition: 0.5s;
+  margin-bottom: 20px;
+}
+
+.about .about-info button i {
+  border-radius: 50%;
+  color: #fff;
+}
+
+.about .about-info button:hover {
+  background: var(--first-color);
+}
+
+/* --------- End About Us --------- */
+
+/* --------- Start All Clinic --------- */
+.all-clinic {
+  padding: 100px 0;
+  /* background: #dddddd2e; */
+  background-image: url(../images/bacmed.png);
+  background-repeat: no-repeat, repeat;
+  background-size: cover;
+}
+
+.all-clinic .clinic-info {
+  box-shadow: 0px 3px 13px 1px rgba(0, 0, 0, 0.12);
+  transition: 0.3s all ease-in-out;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.all-clinic .clinic-info:hover {
+  box-shadow: 0px 15px 45px -9px rgba(0, 0, 0, 0.25);
+}
+
+.all-clinic .clinic-info ul li {
+  list-style: none;
+  font-size: 14px;
+  line-height: 2.5;
+}
+
+.all-clinic .clinic-info ul li i {
+  color: var(--first-color);
+}
+
+.all-clinic .clinic-info h5 {
+  padding: 5px;
+  box-shadow: 2px 3px 4px -3px #353535;
+}
+/* --------- End All Clinic --------- */
+
+/* --------- Start Footer --------- */
+.footer {
+  padding: 7rem 0;
+  position: relative;
+  background: var(--second-color);
+
+  color: #fff;
+}
+
+.footer h5 {
+  color: var(--first-color);
+}
+
+.footer p {
+  color: #fff;
+  font-size: 15px;
+  line-height: 2;
+}
+
+.footer a {
+  font-size: 15px;
+  line-height: 2.5;
+}
+
+.footer a:hover {
+  color: var(--first-color);
+}
+
+.footer-icon {
+  margin-bottom: 20px;
+}
+
+.footer-icon a {
+  background: var(--first-color);
+  padding: 0 8px;
+  font-size: 14px;
+  margin: 4px;
+}
+
+.footer-icon a:hover {
+  background: var(--second-color);
+}
+
+.footer .copyright {
+  text-transform: lowercase;
+}
+
+/* End Footer Section */
+
+/* Start Testimonials */
+.testimonials {
+  padding: 100px 0;
+  background: #52cbcb70;
+  overflow: hidden;
+}
+
+.testimonials .card-title {
+  display: inline;
+  color: var(--first-color);
+}
+.testimonials img {
+  width: 13%;
+  display: inline;
+  position: absolute;
+  right: 27px;
+  bottom: 12px;
+  border: 2px solid #52cbcb;
+  padding: 3px;
+}
+
+.testimonials p {
+  font-size: 14px;
+}
+
+.testimonials i {
+  color: var(--first-color);
+  margin-bottom: 20pxs;
+}
+
+.slick-list {
+  cursor: pointer;
+}
+
+/* End Testimonials */
+
+/* Start doc-img */
+.doc-img {
+  overflow: hidden;
+}
+.doc-img .row .col-md-12 {
+  padding: 0;
+}
+.doc-img img {
+  width: 100%;
+  height: 300px;
+}
+
+/* ======================================================================================== */
+/* ======================================================================================== */
+/* ============  Start About Page   =========== */
+/* ======================================================================================== */
+/* ======================================================================================== */
+
+.about-page {
+  padding: 100px 0;
+}
+
+.about-page i {
+  font-size: 25px;
+  background: var(--first-color);
+  padding: 11px;
+  color: #fff;
+  position: absolute;
+  right: -19px;
+  z-index: 1;
+  transition: 1s;
+}
+
+.about-page i:hover {
+  background: var(--second-color);
+}
+
+.about-page .media-body {
+  box-shadow: 4px 0px 2px 2px #eeeeee;
+  padding: 13px;
+  position: relative;
+  margin-top: 20px;
+  height: 120px;
+  border-radius: 20px 0;
+  transition: all 0.6s;
+}
+
+.about-page .media-body:hover {
+  box-shadow: -4px 0px 2px 2px #eeeeee;
+}
+
+.about-page img {
+  width: 100%;
+}
+
+/* ======================================================================================== */
+/* ======================================================================================== */
+/* ============  Start Contact Page   =========== */
+/* ======================================================================================== */
+/* ======================================================================================== */
+.contact {
+  padding: 100px 0;
+}
+
+.contact .contact-info .form-control {
+  margin-bottom: 20px;
+  background: #eeeeee73;
+  box-shadow: none;
+  outline: none;
+  border: none;
+  border-radius: 0;
+}
+
+.contact .contact-info button {
+  font-size: 14px;
+  color: #fff;
+  border: none;
+  background-color: var(--second-color);
+  transition: all 0.8s;
+  padding: 8px;
+}
+
+.contact .contact-info button:hover {
+  background: var(--first-color);
+}
+
+.contact .con-bac img {
+  width: 100%;
+}
+
+/* ======================================================================================== */
+/* ======================================================================================== */
+/* ============  Start Services Page   =========== */
+/* ======================================================================================== */
+/* ======================================================================================== */
+.all-services {
+  padding: 100px 0;
+}
+
+.all-services img {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.all-ser-info h3 {
+  padding: 5px;
+  box-shadow: -1px 1px 2px 0px #607d8b;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 20px;
+}
+
+.all-services .show-ser form {
+  position: relative;
+}
+
+.all-services .show-ser button {
+  position: absolute;
+  right: 0;
+  border: none;
+  background: transparent !important;
+  color: #333;
+}
+
+.all-services i:hover {
+  background: none;
+}
+
+.all-services .form-inline .form-control {
+  box-shadow: none;
+  outline: none;
+  width: 100%;
+}
+
+.show-ser h4 {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.show-ser a {
+  color: #002345;
+}
