@@ -1,0 +1,72 @@
+@media (max-width: 575.98px) {
+  .page-content {
+    left: 3%;
+  }
+  .page-content h1 {
+    font-size: 30px;
+  }
+
+  .page-content p {
+    font-size: 13px;
+    width: 71%;
+  }
+
+  .navbar .nav-link {
+    padding: 14px 0 !important;
+    width: 7%;
+  }
+
+  .navbar .lang {
+    display: inline-block;
+    right: -25px;
+    top: -3px;
+  }
+
+  /* Start Footer */
+
+  .footer h5 {
+    font-size: 15px;
+  }
+
+  .footer ul li {
+    font-size: 12px;
+  }
+
+  .wrapper .icon {
+    margin: 0 4px;
+  }
+
+  .wrapper .icon span {
+    height: 22px;
+    width: 22px;
+  }
+
+  .wrapper .icon span i {
+    line-height: 0;
+    font-size: 14px;
+  }
+
+  .wrapper .icon .tooltip {
+    padding: 8px 8px;
+    font-size: 11px;
+    border-radius: 25px;
+  }
+
+  .footer .copyright p {
+    font-size: 15px;
+  }
+
+  /* Start Portoflio */
+  ul.filters > li > a {
+    padding: 5px 8px;
+    font-size: 13px;
+  }
+
+  .back-color h1 {
+    padding-top: 30%;
+  }
+
+  .navbar {
+    background: #000133;
+  }
+}
