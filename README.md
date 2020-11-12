@@ -1,5 +1,5 @@
 # Vu-Digital
-new project for Vu-Digital website
+new project for simlepure website
 
 # how to use
 `composer update`
