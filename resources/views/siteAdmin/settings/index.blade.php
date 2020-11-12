@@ -108,7 +108,7 @@
 
                         <!-- /.box-body -->
                         <div class="box-footer">
-                            <input type="submit" value="Add" class="btn btn-primary">
+                            <input type="submit" value="Save" class="btn btn-primary">
                         </div>
 
                     </div>

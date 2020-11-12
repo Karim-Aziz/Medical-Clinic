@@ -1,6 +1,5 @@
-// sticky navigation menu Section
-
-let nav_offset_top = $(".navbar").height() + 10;
+// sticky navigation menu
+let nav_offset_top = $(".navbar").height() + 70;
 
 function navbarFixed() {
   if ($(".navbar").length) {
@@ -16,72 +15,87 @@ function navbarFixed() {
 }
 navbarFixed();
 
-// Start Active Link
-
-$(document).ready(function () {
-  var path = window.location.pathname.split("/").pop();
-
-  if (path == "") {
-    path = index.html;
-  }
-
-  var target = $('nav a[href="' + path + '"]');
-
-  target.addClass("active").siblings().removeClass("active");
+//tooltip
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
 });
 
-// Start Counter Section
-const counters = document.querySelectorAll(".counter");
-const speed = 2000;
+// Slik
 
-counters.forEach((counter) => {
-  const updCount = () => {
-    const target = counter.getAttribute("data-target");
-    const count = +counter.innerText;
-
-    const score = target / speed;
-
-    if (count < target) {
-      counter.innerText = Math.ceil(count + score);
-      setTimeout(updCount, 1);
-    } else {
-      counter.innerText = target;
-    }
-  };
-  updCount();
+$(".test-info").slick({
+  dots: false,
+  infinite: true,
+  speed: 600,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+      },
+    },
+  ],
 });
 
-// Start Portfolio Section
+// 2
 
-(function () {
-  var $projects = $(".projects");
-
-  $projects.isotope({
-    itemSelector: ".item",
-    layoutMode: "fitRows",
-  });
-
-  $("ul.filters > li").on("click", function (e) {
-    e.preventDefault();
-
-    var filter = $(this).attr("data-filter");
-
-    $("ul.filters > li").removeClass("active");
-    $(this).addClass("active");
-
-    $projects.isotope({ filter: filter });
-  });
-
-  $(".card")
-    .mouseenter(function () {
-      $(this).find(".card-overlay").css({ top: "-100%" });
-      $(this).find(".card-hover").css({ top: "0" });
-    })
-    .mouseleave(function () {
-      $(this).find(".card-overlay").css({ top: "0" });
-      $(this).find(".card-hover").css({ top: "100%" });
-    });
-})(jQuery);
-
-//  AOS Animation
+$(".doc-img-slid").slick({
+  dots: false,
+  infinite: true,
+  speed: 600,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+      },
+    },
+  ],
+});
+// AOS
 AOS.init();
