@@ -24,6 +24,10 @@ class CreateSettingsTable extends Migration
             $table->string('Instegram');
             $table->string('Twitter');
             $table->string('Facebook');
+            $table->text('contact_us');
+            $table->text('contact_us_ar');
+            $table->text('footer_text');
+            $table->text('footer_text_ar');
             $table->timestamps();
         });
     }

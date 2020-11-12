@@ -97,6 +97,46 @@
                             </span>
                             @endif
                         </div>
+                        <div class="form-group">
+                            <label>Contact US</label>
+                            <textarea id="contact_us" class="form-control ckeditor" name="contact_us"
+                                required>{!! old('contact_us') ?  old('contact_us') : @$settings->contact_us !!}</textarea>
+                            @if ($errors->has('contact_us'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('contact_us') }}</strong>
+                            </span>
+                            @endif
+                        </div>
+                        <div class="form-group">
+                            <label>Contact US Arbic</label>
+                            <textarea id="contact_us_ar" class="form-control ckeditor" name="contact_us_ar"
+                                required>{!! old('contact_us_ar') ?  old('contact_us_ar') : @$settings->contact_us_ar !!}</textarea>
+                            @if ($errors->has('contact_us_ar'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('contact_us_ar') }}</strong>
+                            </span>
+                            @endif
+                        </div>
+                        <div class="form-group">
+                            <label>footer text</label>
+                            <textarea id="footer_text" class="form-control ckeditor" name="footer_text"
+                                required>{!! old('footer_text') ?  old('footer_text') : @$settings->footer_text !!}</textarea>
+                            @if ($errors->has('footer_text'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('footer_text') }}</strong>
+                            </span>
+                            @endif
+                        </div>
+                        <div class="form-group">
+                            <label>footer text Arbic</label>
+                            <textarea id="footer_text_ar" class="form-control ckeditor" name="footer_text_ar"
+                                required>{!! old('footer_text_ar') ?  old('footer_text_ar') : @$settings->footer_text_ar !!}</textarea>
+                            @if ($errors->has('footer_text_ar'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('footer_text_ar') }}</strong>
+                            </span>
+                            @endif
+                        </div>
 
                         <div class="form-group">
                             <label>Logo</label>
@@ -117,4 +157,12 @@
         </div>
     </div>
 </section>
+@endsection
+@section('js')
+<script src="{{ url('/ckeditor/ckeditor.js') }}"></script>
+<script type="application/javascript">
+    $(document).ready(function () {
+        CKEDITOR.config.contentsLangDirection = 'rtl';
+    });
+</script>
 @endsection

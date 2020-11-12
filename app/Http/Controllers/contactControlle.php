@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Clinic;
 use App\contact;
 use App\settings;
 use App\home_desc;
@@ -16,7 +17,8 @@ class contactControlle extends Controller
     {
         $settings = settings::first();
         $contacts = contact::all();
-        return view('contact.index', compact(['contacts', 'settings']));
+        $Clinics = Clinic::all();
+        return view('contact.index', compact(['contacts', 'settings', 'Clinics']));
     }
 
     // insert new contact

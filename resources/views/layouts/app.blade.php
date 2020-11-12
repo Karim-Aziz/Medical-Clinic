@@ -41,13 +41,14 @@
 
   <!-- Import Custom Styles File -->
   <link rel="stylesheet" href="{{ url('/css/custom.css') }}" />
-   @if (App::isLocale('ar'))
-    <!-- Import Custom Styles AR File -->
-  <link rel="stylesheet" href="{{ url('/css/custom-ar.css') }}" />
-  @endif
+
 
   <!-- Media Style -->
   <link rel="stylesheet" href="{{ url('/css/media.css') }}" />
+  @if (App::isLocale('ar'))
+    <!-- Import Custom Styles AR File -->
+    <link rel="stylesheet" href="{{ url('/css/style_ar.css') }}" />
+  @endif
   @yield('css')
   @php
       $home_desc = App\home_desc::first();
@@ -71,7 +72,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8">
-            <ul>
+            <ul class="@if (App::isLocale('ar'))  text-right  @endif">
               <li><i class="fas fa-phone-alt"></i> {{ @$settings->phone }} </li>
               <li>
                 <i class="far fa-envelope-open"></i>  {{ @$settings->email }}
@@ -142,7 +143,7 @@
                 </a>
               </div>
             </li>
-            <a class="nav-link ml-2" href="{{ url('/contact') }}">@lang('CONTACT US')</a>
+            <a class="nav-link ml-2" href="{{ url('/contact') }}">@lang('Contact Us')</a>
           </div>
           <div class="lang">
             <a class="nav-link ml-2 @if (App::isLocale('en'))  active  @endif" href="{{url('/en')}}">En</a>
@@ -158,15 +159,16 @@
     <!-- ***************************************************************** -->
     @yield('content')
     <!-- =========== Start Footer  =========== -->
-    <div class="footer">
+    <div class="footer @if (App::isLocale('ar'))  text-right  @endif">
       <div class="container">
         <div class="row">
           <div class="col-md-4">
             <img class="mb-5" src="images/logo-footer.png" alt="logo footer" />
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ex
-              eaque similique nostrum
-            </p>
+            @if (App::isLocale('ar'))
+              {!! @$settings->footer_text_ar !!}
+            @else
+              {!! @$settings->footer_text !!}
+            @endif
           </div>
 
           <div class="col-md-3">
@@ -204,7 +206,7 @@
                 <a href="#"> <i class="fas fa-link"></i> @lang('Article')  </a>
               </li>
               <li>
-                <a href="#"> <i class="fas fa-link"></i> @lang('Contact Us') Contact Us </a>
+                <a href="#"> <i class="fas fa-link"></i> @lang('Contact Us') </a>
               </li>
             </ul>
           </div>

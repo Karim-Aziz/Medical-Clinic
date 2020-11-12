@@ -8,7 +8,7 @@ class settings extends Model
 {
 
     protected $table = 'settings';
-    protected $fillable = ['phone', 'email', 'location', 'logo_id', 'YouTube', 'Instegram', 'Twitter', 'Facebook'];
+    protected $fillable = ['phone', 'contact_us_ar', 'contact_us', 'email', 'location', 'logo_id', 'YouTube', 'Instegram', 'Twitter', 'Facebook', 'footer_text', 'footer_text_ar'];
 
     public function logo()
     {
@@ -30,7 +30,10 @@ class settings extends Model
             'Instegram' => 'required|string|max:255',
             'Twitter' => 'required|string|max:255',
             'Facebook' => 'required|string|max:255',
-
+            'contact_us' => 'required|string',
+            'contact_us_ar' => 'required|string',
+            'footer_text' => 'required|string',
+            'footer_text_ar' => 'required|string',
         ];
         return $rules;
     }
@@ -46,6 +49,10 @@ class settings extends Model
             'Instegram' => $request->Instegram,
             'Twitter' => $request->Twitter,
             'Facebook' => $request->Facebook,
+            'contact_us' => $request->contact_us,
+            'contact_us_ar' => $request->contact_us_ar,
+            'footer_text' => $request->footer_text,
+            'footer_text_ar' => $request->footer_text_ar,
         ];
         if ($request->file('logo_id') != null) {
             $credentials['logo_id'] = self::file($request->file('logo_id'));
