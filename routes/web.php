@@ -76,6 +76,13 @@ Route::group(['prefix' => '/siteAdmin'], function () {
         Route::get('/delete/{id}', 'siteAdmin\ClinicController@delete');
         Route::post('/edit/{id}', 'siteAdmin\ClinicController@edit');
     });
+    Route::group([  'prefix'=>'/Video'],function(){
+        Route::get('/show', 'siteAdmin\VideoController@index');
+        Route::get('/add', 'siteAdmin\VideoController@add');
+        Route::post('/insert', 'siteAdmin\VideoController@insert');
+        Route::get('/delete/{id}', 'siteAdmin\VideoController@delete');
+        Route::post('/edit/{id}', 'siteAdmin\VideoController@edit');
+    });
     Route::group([  'prefix'=>'/places'],function(){
         Route::get('/show', 'siteAdmin\placesController@index');
         Route::get('/add', 'siteAdmin\placesController@add');

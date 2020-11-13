@@ -4,28 +4,28 @@
         <div class="col-md-3">
           <div class="info-data">
             <img class="mb-3" src="images/icon/1.png" alt="" />
-            <h6>Promotional Yearly Membership</h6>
+            <h6>@lang('Promotional Yearly Membership')</h6>
           </div>
         </div>
 
         <div class="col-md-3">
           <div class="info-data">
             <img class="mb-3" src="images/icon/2.png" alt="" />
-            <h6>24/7 Express Services</h6>
+            <h6>@lang('24/7 Express Services')</h6>
           </div>
         </div>
 
         <div class="col-md-3">
           <div class="info-data">
             <img class="mb-3" src="images/icon/3.png" alt="" />
-            <h6>Promotional Yearly Membership</h6>
+            <h6>@lang('Promotional Yearly Membership')</h6>
           </div>
         </div>
 
         <div class="col-md-3">
           <div class="info-data">
             <img class="mb-3" src="images/icon/4.png" alt="" />
-            <h6>Flexible Installment Options</h6>
+            <h6>@lang('Flexible Installment Options')</h6>
           </div>
         </div>
       </div>
