@@ -79,7 +79,7 @@
               </li>
             </ul>
           </div>
-          <div class="col-lg-4 text-right">
+          <div class="col-lg-4 @if (App::isLocale('ar'))  text-left @else  text-right @endif">
             <div>
               <a class="ml-3" href="{{ @$settings->Facebook }}" target="_blank"><i class="fab fa-facebook-f"></i></a>
               <a class="ml-3" href="{{ @$settings->Instegram }}" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -129,18 +129,15 @@
                 class="dropdown-menu dropdown-menu-right animate slideIn"
                 aria-labelledby="navbarDropdown"
               >
-                <a class="dropdown-item" href="services.html"
-                  >Hearing impairment
-                </a>
-                <a class="dropdown-item" href="services.html"
-                  >Nose detection
-                </a>
-                <a class="dropdown-item" href="services.html"
-                  >Cultivate a shell
-                </a>
-                <a class="dropdown-item" href="services.html"
-                  >Tinnitus treatment
-                </a>
+                @if (count($pages) > 0)
+                    @foreach ($pages as $page)
+                        @if (App::isLocale('ar'))
+                          <a class="dropdown-item" href="{{url('/pages/'.@$page->id)}}"> {{ @$page->name_ar }}</a>
+                        @else
+                          <a class="dropdown-item" href="{{url('/pages/'.@$page->id)}}"> {{ @$page->name }}</a>
+                        @endif
+                    @endforeach
+                @endif
               </div>
             </li>
             <a class="nav-link ml-2" href="{{ url('/contact') }}">@lang('Contact Us')</a>
@@ -153,7 +150,21 @@
       </div>
     </nav>
     <!-- =========== End Navbar =========== -->
+<!-- =========== Start Icons  =========== -->
+    <div class="fix-icons">
+      <a href="#" data-toggle="tooltip" data-placement="right" title="Facebook"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
 
+      <a href="#" data-toggle="tooltip" data-placement="right" title="Phone"
+        ><i class="fas fa-phone-volume"></i
+      ></a>
+
+      <a href="#" data-toggle="tooltip" data-placement="right" title="Whatsapp"
+        ><i class="fab fa-whatsapp"></i
+      ></a>
+    </div>
+    <!-- =========== End Icons  =========== -->
 
 
     <!-- ***************************************************************** -->
@@ -174,22 +185,18 @@
           <div class="col-md-3">
             <h5 class="mb-5"> @lang('Dr. services')</h5>
             <ul class="list-group list-unstyled">
-              <li>
-                <a href="#"> <i class="fas fa-link"></i> @lang('Tinnitus treatment ') </a>
-              </li>
-              <li>
-                <a href="#"> <i class="fas fa-link"></i> @lang('Vertigo treatment') </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fas fa-link"></i> @lang('Hearing impairment treatment')
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fas fa-link"></i> @lang('Cochlear implantation')
-                </a>
-              </li>
+              @if (count($pages) > 0)
+                  @foreach ($pages as $page)
+                    <li>
+                      @if (App::isLocale('ar'))
+                        <a href="{{url('/pages/'.@$page->id)}}"> <i class="fas fa-link"></i> {{ @$page->name_ar }}</a>
+                      @else
+                        <a href="{{url('/pages/'.@$page->id)}}"> <i class="fas fa-link"></i> {{ @$page->name }}</a>
+                      @endif
+                    </li>
+                  @endforeach
+              @endif
+
             </ul>
           </div>
 
@@ -197,7 +204,7 @@
             <h5 class="mb-5">@lang('Important links')</h5>
             <ul class="list-group list-unstyled">
               <li>
-                <a href="#"> <i class="fas fa-link"></i> @lang('About Doctor')  </a>
+                <a href="{{ url('/about_us') }}"> <i class="fas fa-link"></i> @lang('About Doctor')  </a>
               </li>
               <li>
                 <a href="#"> <i class="fas fa-link"></i> @lang('Service')  </a>
@@ -206,7 +213,7 @@
                 <a href="#"> <i class="fas fa-link"></i> @lang('Article')  </a>
               </li>
               <li>
-                <a href="#"> <i class="fas fa-link"></i> @lang('Contact Us') </a>
+                <a href="{{ url('/contact') }}"> <i class="fas fa-link"></i> @lang('Contact Us') </a>
               </li>
             </ul>
           </div>

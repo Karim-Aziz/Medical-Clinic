@@ -6,16 +6,38 @@ App::setLocale('en');
     $home_desc = App\home_desc::select('desc AS description')->first();
 }
 ?>
-<!-- Start Landing Page -->
-  <div class="landing-page <?php if(App::isLocale('ar')): ?>  text-right  <?php endif; ?>">
-    <div class="page-content" data-aos="flip-left" data-aos-duration="2000">
-        <?php if(isset($home_desc->description)): ?>
-            <?php echo $home_desc->description; ?>
+<!-- =========== Start Full Img  =========== -->
+    <div class="landing-page <?php if(App::isLocale('ar')): ?>  text-right  <?php endif; ?>">
+      <div class="container">
+        <div class="page-content">
+          <?php if(App::isLocale('ar')): ?>
+            <h1>دكتور / <span class="type"></span></h1>
+          <?php else: ?>
+          <h1>DR. <span class="type"></span></h1>
+          <?php endif; ?>
+          <?php if(isset($home_desc->description)): ?>
+              <?php echo $home_desc->description; ?>
 
-        <?php endif; ?>
-
-      <a href="#">Get in touch</a>
+          <?php endif; ?>
+          <a href="#"> <?php echo app('translator')->getFromJson('Doctor Service'); ?></a>
+        </div>
+      </div>
     </div>
-  </div>
-  <!-- End Landing Page -->
+    <!-- =========== End Full Img  =========== -->
+
+    <!-- =========== Start Icons  =========== -->
+    <div class="fix-icons">
+      <a href="#" data-toggle="tooltip" data-placement="right" title="Facebook"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <a href="#" data-toggle="tooltip" data-placement="right" title="Phone"
+        ><i class="fas fa-phone-volume"></i
+      ></a>
+
+      <a href="#" data-toggle="tooltip" data-placement="right" title="Whatsapp"
+        ><i class="fab fa-whatsapp"></i
+      ></a>
+    </div>
+    <!-- =========== End Icons  =========== -->
 

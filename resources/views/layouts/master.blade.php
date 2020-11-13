@@ -199,8 +199,8 @@
                     </li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-location-arrow" aria-hidden="true"></i>
-                            <span>portfolios</span>
+                            <i class="fa fa-chevron-circle-up" aria-hidden="true"></i>
+                            <span>Services categories</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
@@ -216,23 +216,31 @@
                                     <i class="fa fa-circle-o"></i> Show / Edit categories
                                 </a>
                             </li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-location-arrow" aria-hidden="true"></i>
+                            <span>Our Services</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+
                             <li>
                                 <a href="/siteAdmin/places/add">
-                                    <i class="fa fa-circle-o"></i> Add portfolio
+                                    <i class="fa fa-circle-o"></i> Add Service
                                 </a>
                             </li>
                             <li>
                                 <a href="/siteAdmin/places/show">
-                                    <i class="fa fa-circle-o"></i> Show / Edit portfolios
+                                    <i class="fa fa-circle-o"></i> Show / Edit Services
                                 </a>
                             </li>
 
                         </ul>
                     </li>
-
-
-
-
 
                     <li class="treeview">
                         <a href="#">

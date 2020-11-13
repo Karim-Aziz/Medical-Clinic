@@ -1,71 +1,80 @@
   <?php
   $settings = App\settings::first();
   ?>
-  <!-- Start Footer Section -->
+<!-- =========== Start Footer  =========== -->
     <div class="footer <?php if(App::isLocale('ar')): ?>  text-right  <?php endif; ?>">
       <div class="container">
         <div class="row">
-          <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h5 class="mb-5"><?php echo app('translator')->getFromJson('Scenic Products'); ?></h5>
-            <ul class="list-group list-unstyled <?php if(App::isLocale('ar')): ?>  ar-list <?php endif; ?>">
-              <li><i class="fas <?php if(App::isLocale('ar')): ?> fa-caret-left ml-2 <?php else: ?> fa-caret-right mr-2 <?php endif; ?>"></i><?php echo app('translator')->getFromJson('Web Design'); ?> </li>
-              <li><i class="fas <?php if(App::isLocale('ar')): ?> fa-caret-left ml-2 <?php else: ?> fa-caret-right mr-2 <?php endif; ?>"></i><?php echo app('translator')->getFromJson('Graphic Design'); ?> </li>
-              <li><i class="fas <?php if(App::isLocale('ar')): ?> fa-caret-left ml-2 <?php else: ?> fa-caret-right mr-2 <?php endif; ?>"></i><?php echo app('translator')->getFromJson('Web Developers'); ?> </li>
+          <div class="col-md-4">
+            <img class="mb-5" src="images/logo-footer.png" alt="logo footer" />
+            <?php if(App::isLocale('ar')): ?>
+              <?php echo @$settings->footer_text_ar; ?>
+
+            <?php else: ?>
+              <?php echo @$settings->footer_text; ?>
+
+            <?php endif; ?>
+          </div>
+
+          <div class="col-md-3">
+            <h5 class="mb-5"> <?php echo app('translator')->getFromJson('Dr. services'); ?></h5>
+            <ul class="list-group list-unstyled">
+              <?php if(count($pages) > 0): ?>
+                  <?php $__currentLoopData = $pages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $page): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <li>
+                      <?php if(App::isLocale('ar')): ?>
+                        <a href="<?php echo e(url('/pages/'.@$page->id)); ?>"> <i class="fas fa-link"></i> <?php echo e(@$page->name_ar); ?></a>
+                      <?php else: ?>
+                        <a href="<?php echo e(url('/pages/'.@$page->id)); ?>"> <i class="fas fa-link"></i> <?php echo e(@$page->name); ?></a>
+                      <?php endif; ?>
+                    </li>
+                  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+              <?php endif; ?>
+
+            </ul>
+          </div>
+
+          <div class="col-md">
+            <h5 class="mb-5"><?php echo app('translator')->getFromJson('Important links'); ?></h5>
+            <ul class="list-group list-unstyled">
               <li>
-                <i class="fas <?php if(App::isLocale('ar')): ?> fa-caret-left ml-2 <?php else: ?> fa-caret-right mr-2 <?php endif; ?>"></i><?php echo app('translator')->getFromJson('Marketing Strategy'); ?>
+                <a href="<?php echo e(url('/about_us')); ?>"> <i class="fas fa-link"></i> <?php echo app('translator')->getFromJson('About Doctor'); ?>  </a>
+              </li>
+              <li>
+                <a href="#"> <i class="fas fa-link"></i> <?php echo app('translator')->getFromJson('Service'); ?>  </a>
+              </li>
+              <li>
+                <a href="#"> <i class="fas fa-link"></i> <?php echo app('translator')->getFromJson('Article'); ?>  </a>
+              </li>
+              <li>
+                <a href="<?php echo e(url('/contact')); ?>"> <i class="fas fa-link"></i> <?php echo app('translator')->getFromJson('Contact Us'); ?> </a>
               </li>
             </ul>
           </div>
 
-          <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h5 class="mb-5"><?php echo app('translator')->getFromJson('Company'); ?></h5>
-            <ul class="list-group list-unstyled <?php if(App::isLocale('ar')): ?>  ar-list <?php endif; ?>">
-              <li><i class="fas <?php if(App::isLocale('ar')): ?> fa-caret-left ml-2 <?php else: ?> fa-caret-right mr-2 <?php endif; ?>"></i><?php echo app('translator')->getFromJson('Home'); ?> </li>
-              <li><i class="fas <?php if(App::isLocale('ar')): ?> fa-caret-left ml-2 <?php else: ?> fa-caret-right mr-2 <?php endif; ?>"></i><?php echo app('translator')->getFromJson('About Us'); ?> </li>
-              <li><i class="fas <?php if(App::isLocale('ar')): ?> fa-caret-left ml-2 <?php else: ?> fa-caret-right mr-2 <?php endif; ?>"></i><?php echo app('translator')->getFromJson('Portfolio'); ?> </li>
-              <li><i class="fas <?php if(App::isLocale('ar')): ?> fa-caret-left ml-2 <?php else: ?> fa-caret-right mr-2 <?php endif; ?>"></i><?php echo app('translator')->getFromJson('Contact'); ?> </li>
-            </ul>
-          </div>
-
-          <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h5 class="mb-5"><?php echo app('translator')->getFromJson('Support'); ?></h5>
-            <ul class="list-group list-unstyled <?php if(App::isLocale('ar')): ?>  ar-list <?php endif; ?>">
-              <li><i class="fas <?php if(App::isLocale('ar')): ?> fa-caret-left ml-2 <?php else: ?> fa-caret-right mr-2 <?php endif; ?>"></i><?php echo app('translator')->getFromJson('Supports'); ?> </li>
-              <li><i class="fas <?php if(App::isLocale('ar')): ?> fa-caret-left ml-2 <?php else: ?> fa-caret-right mr-2 <?php endif; ?>"></i><?php echo app('translator')->getFromJson('Privacy'); ?> </li>
-              <li><i class="fas <?php if(App::isLocale('ar')): ?> fa-caret-left ml-2 <?php else: ?> fa-caret-right mr-2 <?php endif; ?>"></i><?php echo app('translator')->getFromJson('Terms of Service'); ?> </li>
-            </ul>
-          </div>
-
-          <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h5 class="mb-5"><?php echo app('translator')->getFromJson('Contact'); ?></h5>
-            <div class="wrapper text-center">
-              <div class="icon facebook">
-
-                <div class="tooltip">Facebook</div>
-                <a href="<?php echo e(@$settings->Facebook); ?>" target="_blank">
-                  <span><i class="fab fa-facebook-f"></i></span>
-                </a>
-              </div>
-              <div class="icon twitter">
-                <div class="tooltip">Twitter</div>
-                <a href="<?php echo e(@$settings->Twitter); ?>" target="_blank">
-                  <span><i class="fab fa-twitter"></i></span>
-                </a>
-              </div>
-              <div class="icon instagram">
-                <div class="tooltip">Instagram</div>
-                <a href="<?php echo e(@$settings->Instegram); ?>" target="_blank">
-                  <span><i class="fab fa-instagram"></i></span>
-                </a>
-              </div>
-
-              <div class="icon youtube">
-                <div class="tooltip">YouTube</div>
-                <a href="<?php echo e(@$settings->YouTube); ?>" target="_blank">
-                  <span><i class="fab fa-youtube"></i></span>
-                </a>
-              </div>
+          <div class="col-md">
+            <h5 class="mb-5"><?php echo app('translator')->getFromJson('Contact Us'); ?></h5>
+            <div class="footer-icon">
+              <a href="<?php echo e(@$settings->Facebook); ?>" target="_blank"><i class="fab fa-facebook-f"></i></a>
+              <a href="<?php echo e(@$settings->Twitter); ?>" target="_blank"><i class="fab fa-twitter"></i></a>
+              <a href="<?php echo e(@$settings->YouTube); ?>" target="_blank"><i class="fab fa-youtube"></i></a>
+              <a href="<?php echo e(@$settings->Instegram); ?>" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
+
+            <ul class="list-group list-unstyled">
+              <li>
+                <a href="#">
+                  <i class="fas fa-phone-alt mr-2"></i><?php echo e(@$settings->phone); ?>
+
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fas fa-mail-bulk mr-2"></i><?php echo e(@$settings->email); ?>
+
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
         <!-- Start Copyright -->
@@ -78,5 +87,5 @@
         </div>
       </div>
     </div>
-  <!-- End Footer Section -->
+    <!-- =========== End Footer  =========== -->
 

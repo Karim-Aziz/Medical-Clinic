@@ -6,15 +6,37 @@ App::setLocale('en');
     $home_desc = App\home_desc::select('desc AS description')->first();
 }
 @endphp
-<!-- Start Landing Page -->
-  <div class="landing-page @if (App::isLocale('ar'))  text-right  @endif">
-    <div class="page-content" data-aos="flip-left" data-aos-duration="2000">
-        @isset($home_desc->description)
-            {!! $home_desc->description !!}
-        @endisset
-
-      <a href="#">Get in touch</a>
+<!-- =========== Start Full Img  =========== -->
+    <div class="landing-page @if (App::isLocale('ar'))  text-right  @endif">
+      <div class="container">
+        <div class="page-content">
+          @if (App::isLocale('ar'))
+            <h1>دكتور / <span class="type"></span></h1>
+          @else
+          <h1>DR. <span class="type"></span></h1>
+          @endif
+          @isset($home_desc->description)
+              {!! $home_desc->description !!}
+          @endisset
+          <a href="#"> @lang('Doctor Service')</a>
+        </div>
+      </div>
     </div>
-  </div>
-  <!-- End Landing Page -->
+    <!-- =========== End Full Img  =========== -->
+
+    <!-- =========== Start Icons  =========== -->
+    <div class="fix-icons">
+      <a href="#" data-toggle="tooltip" data-placement="right" title="Facebook"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <a href="#" data-toggle="tooltip" data-placement="right" title="Phone"
+        ><i class="fas fa-phone-volume"></i
+      ></a>
+
+      <a href="#" data-toggle="tooltip" data-placement="right" title="Whatsapp"
+        ><i class="fab fa-whatsapp"></i
+      ></a>
+    </div>
+    <!-- =========== End Icons  =========== -->
 

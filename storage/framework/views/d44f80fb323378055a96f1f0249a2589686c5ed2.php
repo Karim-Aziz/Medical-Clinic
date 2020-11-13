@@ -80,7 +80,7 @@
               </li>
             </ul>
           </div>
-          <div class="col-lg-4 text-right">
+          <div class="col-lg-4 <?php if(App::isLocale('ar')): ?>  text-left <?php else: ?>  text-right <?php endif; ?>">
             <div>
               <a class="ml-3" href="<?php echo e(@$settings->Facebook); ?>" target="_blank"><i class="fab fa-facebook-f"></i></a>
               <a class="ml-3" href="<?php echo e(@$settings->Instegram); ?>" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -130,18 +130,15 @@
                 class="dropdown-menu dropdown-menu-right animate slideIn"
                 aria-labelledby="navbarDropdown"
               >
-                <a class="dropdown-item" href="services.html"
-                  >Hearing impairment
-                </a>
-                <a class="dropdown-item" href="services.html"
-                  >Nose detection
-                </a>
-                <a class="dropdown-item" href="services.html"
-                  >Cultivate a shell
-                </a>
-                <a class="dropdown-item" href="services.html"
-                  >Tinnitus treatment
-                </a>
+                <?php if(count($pages) > 0): ?>
+                    <?php $__currentLoopData = $pages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $page): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php if(App::isLocale('ar')): ?>
+                          <a class="dropdown-item" href="<?php echo e(url('/pages/'.@$page->id)); ?>"> <?php echo e(@$page->name_ar); ?></a>
+                        <?php else: ?>
+                          <a class="dropdown-item" href="<?php echo e(url('/pages/'.@$page->id)); ?>"> <?php echo e(@$page->name); ?></a>
+                        <?php endif; ?>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php endif; ?>
               </div>
             </li>
             <a class="nav-link ml-2" href="<?php echo e(url('/contact')); ?>"><?php echo app('translator')->getFromJson('Contact Us'); ?></a>
@@ -154,7 +151,21 @@
       </div>
     </nav>
     <!-- =========== End Navbar =========== -->
+<!-- =========== Start Icons  =========== -->
+    <div class="fix-icons">
+      <a href="#" data-toggle="tooltip" data-placement="right" title="Facebook"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
 
+      <a href="#" data-toggle="tooltip" data-placement="right" title="Phone"
+        ><i class="fas fa-phone-volume"></i
+      ></a>
+
+      <a href="#" data-toggle="tooltip" data-placement="right" title="Whatsapp"
+        ><i class="fab fa-whatsapp"></i
+      ></a>
+    </div>
+    <!-- =========== End Icons  =========== -->
 
 
     <!-- ***************************************************************** -->
@@ -177,22 +188,18 @@
           <div class="col-md-3">
             <h5 class="mb-5"> <?php echo app('translator')->getFromJson('Dr. services'); ?></h5>
             <ul class="list-group list-unstyled">
-              <li>
-                <a href="#"> <i class="fas fa-link"></i> <?php echo app('translator')->getFromJson('Tinnitus treatment '); ?> </a>
-              </li>
-              <li>
-                <a href="#"> <i class="fas fa-link"></i> <?php echo app('translator')->getFromJson('Vertigo treatment'); ?> </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fas fa-link"></i> <?php echo app('translator')->getFromJson('Hearing impairment treatment'); ?>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fas fa-link"></i> <?php echo app('translator')->getFromJson('Cochlear implantation'); ?>
-                </a>
-              </li>
+              <?php if(count($pages) > 0): ?>
+                  <?php $__currentLoopData = $pages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $page): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <li>
+                      <?php if(App::isLocale('ar')): ?>
+                        <a href="<?php echo e(url('/pages/'.@$page->id)); ?>"> <i class="fas fa-link"></i> <?php echo e(@$page->name_ar); ?></a>
+                      <?php else: ?>
+                        <a href="<?php echo e(url('/pages/'.@$page->id)); ?>"> <i class="fas fa-link"></i> <?php echo e(@$page->name); ?></a>
+                      <?php endif; ?>
+                    </li>
+                  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+              <?php endif; ?>
+
             </ul>
           </div>
 
@@ -200,7 +207,7 @@
             <h5 class="mb-5"><?php echo app('translator')->getFromJson('Important links'); ?></h5>
             <ul class="list-group list-unstyled">
               <li>
-                <a href="#"> <i class="fas fa-link"></i> <?php echo app('translator')->getFromJson('About Doctor'); ?>  </a>
+                <a href="<?php echo e(url('/about_us')); ?>"> <i class="fas fa-link"></i> <?php echo app('translator')->getFromJson('About Doctor'); ?>  </a>
               </li>
               <li>
                 <a href="#"> <i class="fas fa-link"></i> <?php echo app('translator')->getFromJson('Service'); ?>  </a>
@@ -209,7 +216,7 @@
                 <a href="#"> <i class="fas fa-link"></i> <?php echo app('translator')->getFromJson('Article'); ?>  </a>
               </li>
               <li>
-                <a href="#"> <i class="fas fa-link"></i> <?php echo app('translator')->getFromJson('Contact Us'); ?> </a>
+                <a href="<?php echo e(url('/contact')); ?>"> <i class="fas fa-link"></i> <?php echo app('translator')->getFromJson('Contact Us'); ?> </a>
               </li>
             </ul>
           </div>

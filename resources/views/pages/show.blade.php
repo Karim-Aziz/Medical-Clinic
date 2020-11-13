@@ -10,6 +10,89 @@
 @extends('layouts.app')
 @section('title', $page->name)
 @section('content')
+<!-- =========== Start Services Page =========== -->
+    <div class="all-services">
+      <div class="container">
+        <div class="row" data-aos="zoom-in" data-aos-duration="1500">
+          <div class="col-md-9">
+            <div class="all-ser-info">
+              <img src="images/servises/4.jpg" alt="Services image" />
+              <h2>Free dental care for our clients</h2>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi
+                molestias voluptatum magni hic suscipit, dignissimos repellat
+                sed, iusto blanditiis praesentium porro nam. Assumenda officia
+                sunt laudantium perspiciatis nihil fuga quidem!
+              </p>
+
+              <h3>What are the causes of hearing loss ?</h3>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Morbi leo risus</li>
+                <li class="list-group-item">Porta ac consectetur ac</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+              </ul>
+
+              <h3>Risk factors that lead to hearing loss ?</h3>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Morbi leo risus</li>
+                <li class="list-group-item">Porta ac consectetur ac</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+              </ul>
+
+              <h3>Hearing impairment treatment ?</h3>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Morbi leo risus</li>
+                <li class="list-group-item">Porta ac consectetur ac</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="show-ser">
+              <form class="form-inline">
+                <input class="form-control" placeholder="Search..." />
+                <button type="submit"><i class="fas fa-search"></i></button>
+              </form>
+              <h4>All Services</h4>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item list-group-item-action list-group-item-light"
+                >
+                  <a href="#">Cras justo odio</a>
+                </li>
+                <li
+                  class="list-group-item list-group-item-action list-group-item-light"
+                >
+                  <a href="#">Dapibus ac facilisis in </a>
+                </li>
+                <li
+                  class="list-group-item list-group-item-action list-group-item-light"
+                >
+                  <a href="#">Morbi leo risus </a>
+                </li>
+                <li
+                  class="list-group-item list-group-item-action list-group-item-light"
+                >
+                  <a href="#">Porta ac consectetur ac </a>
+                </li>
+                <li
+                  class="list-group-item list-group-item-action list-group-item-light"
+                >
+                  <a href="#">Vestibulum at eros </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- =========== End Services Page =========== -->
 <!--  ======================= Start Our Travels ============================== -->
 <div class="travels wow fadeInUp">
     <div class="container">
@@ -84,7 +167,7 @@
                 @endforeach
                 @endif
                 @endif
-                
+
             </div>
             <div class="pagination-dev">
                 <nav>
