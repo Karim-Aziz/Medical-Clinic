@@ -120,7 +120,7 @@
             <div class="small-box bg-red">
                 <div class="inner">
                     <h3>{{App\places::all()->count()}}</h3>
-                    <p>portfolios</p>
+                    <p>Our Services</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-chatbox-working"></i>

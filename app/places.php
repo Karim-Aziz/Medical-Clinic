@@ -10,12 +10,15 @@ class places extends Model
 {
     //
     protected $table = 'places';
-    protected $fillable = [ 'url', 'image_id', 'page_id'];
+    protected $fillable = [ 'title', 'title_ar', 'desc', 'desc_ar', 'image_id', 'page_id'];
 
     public static function rules($request)
     {
         $rules = [
-            'url' => 'required|string|max:255',
+            'title' => 'required|string|max:255',
+            'title_ar' => 'required|string|max:255',
+            'desc' => 'required|string',
+            'desc_ar' => 'required|string',
             'page_id' => 'required|integer',
         ];
         return $rules;
@@ -24,7 +27,10 @@ class places extends Model
     public static function rules_update($request)
     {
         $rules = [
-            'url' => 'required|string|max:255',
+            'title' => 'required|string|max:255',
+            'title_ar' => 'required|string|max:255',
+            'desc' => 'required|string',
+            'desc_ar' => 'required|string',
             'page_id' => 'required|integer',
             //'image_id' => 'required|integer',
 
@@ -36,7 +42,10 @@ class places extends Model
     public static function credentials($request)
     {
         $credentials = [
-            'url' => $request->url,
+            'title' => $request->title,
+            'title_ar' => $request->title_ar,
+            'desc_ar' => $request->desc_ar,
+            'desc' => $request->desc,
             'page_id' => $request->page_id,
 
         ];

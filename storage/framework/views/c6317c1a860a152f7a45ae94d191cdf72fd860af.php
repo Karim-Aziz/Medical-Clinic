@@ -6,7 +6,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <img class="mb-5" src="images/logo-footer.png" alt="logo footer" />
+            <img class="mb-5" src="<?php echo e(url('/img/logo/'.@$settings->logoFooter->name)); ?>" alt="logo footer" />
             <?php if(App::isLocale('ar')): ?>
               <?php echo @$settings->footer_text_ar; ?>
 

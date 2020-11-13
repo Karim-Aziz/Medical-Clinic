@@ -28,13 +28,24 @@
                      {{ csrf_field() }}
                     <div class="box-body">
                         <div class="form-group">
-                            <label>url</label>
-                            <input id="url" type="text" class="form-control" name="url" value="{{ old('url') }}"
+                            <label>title</label>
+                            <input id="title" type="text" class="form-control" name="title" value="{{ old('title') }}"
                                 required autofocus>
 
-                            @if ($errors->has('url'))
+                            @if ($errors->has('title'))
                             <span class="help-block">
-                                <strong>{{ $errors->first('url') }}</strong>
+                                <strong>{{ $errors->first('title') }}</strong>
+                            </span>
+                            @endif
+                        </div>
+                        <div class="form-group">
+                            <label>title_ar</label>
+                            <input id="title_ar" type="text" class="form-control" name="title_ar" value="{{ old('title_ar') }}"
+                                required autofocus>
+
+                            @if ($errors->has('title_ar'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('title_ar') }}</strong>
                             </span>
                             @endif
                         </div>
@@ -56,6 +67,26 @@
                             <label>Photo</label>
                             <input name="img" class="form-control" type="file">
                         </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea id="desc" class="form-control ckeditor" name="desc"
+                                required>{{old('desc')}}</textarea>
+                            @if ($errors->has('desc'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('desc') }}</strong>
+                            </span>
+                            @endif
+                        </div>
+                        <div class="form-group">
+                            <label>Description Arbic</label>
+                            <textarea id="desc_ar" class="form-control ckeditor" name="desc_ar"
+                                required>{{old('desc_ar')}}</textarea>
+                            @if ($errors->has('desc_ar'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('desc_ar') }}</strong>
+                            </span>
+                            @endif
+                        </div>
                         <!-- /.box-body -->
                         <div class="box-footer">
                             <input type="submit" value="Add" class="btn btn-primary" >
@@ -67,4 +98,12 @@
         </div>
     </div>
 </section>
+@endsection
+@section('js')
+<script src="{{ url('/ckeditor/ckeditor.js') }}"></script>
+<script type="application/javascript">
+    $(document).ready(function () {
+        CKEDITOR.config.contentsLangDirection = 'rtl';
+    });
+</script>
 @endsection

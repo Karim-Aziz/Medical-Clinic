@@ -22,7 +22,9 @@ Route::group([  'prefix'=>'/contact'], function () {
 
 Route::group([  'prefix'=>'/pages'], function () {
     Route::get('/', 'pagesController@index');
+    Route::get('/search', 'pagesController@search');
     Route::get('/{id}', 'pagesController@show');
+    Route::get('/place/{id}', 'pagesController@place');
 });
 
 
@@ -115,13 +117,11 @@ Route::get('/', function () {
 
 Route::get('/{locale}', function ($locale) {
     if ($locale === 'ar' ) {
-        $home_desc = App\home_desc::select('desc_ar AS description')->first();
         App::setLocale($locale);
         Session::put('app_locale', $locale);
     }else {
-        $home_desc = App\home_desc::select('desc AS description')->first();
         App::setLocale('en');
         Session::put('app_locale', 'en');
     }
-    return view('welcome.index', compact(['home_desc']));
+    return redirect()->back();
 });

@@ -144,6 +144,12 @@
                                 src="{{ '/img/logo/'. @$settings->logo->name }}">
                             <input name="logo_id" class="form-control" type="file">
                         </div>
+                        <div class="form-group">
+                            <label>footer logo</label>
+                            <img style=" height: 128px;width: auto;border: 1px solid #ccc; padding: 2px "
+                                src="{{ '/img/logo/'. @$settings->logoFooter->name }}">
+                            <input name="logo_footer_id" class="form-control" type="file">
+                        </div>
 
 
                         <!-- /.box-body -->

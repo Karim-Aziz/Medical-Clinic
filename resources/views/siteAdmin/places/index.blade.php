@@ -3,7 +3,7 @@
 @section('content')
 <section class="content-header">
     <h1>
-        portfolios
+        Our Services
     </h1>
 </section>
 <div class="row">
@@ -31,7 +31,7 @@
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">×</span></button>
-                                            <h4 class="modal-title">Edit portfolio </h4>
+                                            <h4 class="modal-title">Edit Service </h4>
                                         </div>
 
 
@@ -41,12 +41,22 @@
                                             {{ csrf_field() }}
                                             <div class="box-body">
                                                 <div class="form-group">
-                                                    <label>url</label>
-                                                    <input name="url" type="text" class="form-control"
-                                                        value="{{old('url')? old('url'): $place->url}}">
-                                                        @if ($errors->has('url'))
+                                                    <label>title</label>
+                                                    <input name="title" type="text" class="form-control"
+                                                        value="{{old('title')? old('title'): $place->title}}">
+                                                        @if ($errors->has('title'))
                                                         <span class="help-block">
-                                                            <strong>{{ $errors->first('url') }}</strong>
+                                                            <strong>{{ $errors->first('title') }}</strong>
+                                                        </span>
+                                                        @endif
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>title_ar</label>
+                                                    <input name="title_ar" type="text" class="form-control"
+                                                        value="{{old('title_ar')? old('title_ar'): $place->title_ar}}">
+                                                        @if ($errors->has('title_ar'))
+                                                        <span class="help-block">
+                                                            <strong>{{ $errors->first('title_ar') }}</strong>
                                                         </span>
                                                         @endif
                                                 </div>
@@ -83,6 +93,26 @@
                                                         src="{{ @$place->image->name ? '/img/places_images/'.$place->image->name : url('/dist/img/user2-160x160.jpg')}}">
                                                     <input name="img" class="form-control" type="file">
                                                 </div>
+                                                 <div class="form-group">
+                                                    <label>Description</label>
+                                                    <textarea id="desc" class="form-control ckeditor" name="desc"
+                                                        required>{{old('desc')? old('desc'): $place->desc}}</textarea>
+                                                    @if ($errors->has('desc'))
+                                                    <span class="help-block">
+                                                        <strong>{{ $errors->first('desc') }}</strong>
+                                                    </span>
+                                                    @endif
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Description Arbic</label>
+                                                    <textarea id="desc_ar" class="form-control ckeditor" name="desc_ar"
+                                                        required>{{old('desc_ar')? old('desc_ar'): $place->desc_ar}}</textarea>
+                                                    @if ($errors->has('desc_ar'))
+                                                    <span class="help-block">
+                                                        <strong>{{ $errors->first('desc_ar') }}</strong>
+                                                    </span>
+                                                    @endif
+                                                </div>
                                                 <div class="box-footer">
                                                     <input type="submit" value="update" class="btn btn-primary" >
                                                 </div>
@@ -113,7 +143,8 @@
                                         <tr role="row">
                                             <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1"  aria-sort="ascending"
-                                                aria-label="url: activate to sort column descending">url</th>
+                                                aria-label="title: activate to sort column descending">title</th>
+
 
                                             <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-sort="ascending"
@@ -132,7 +163,7 @@
                                         @if ($places->count() > 0)
                                         @foreach ($places as $place)
                                         <tr role="row" class="odd">
-                                            <td class="sorting_1">{{$place->url}}</td>
+                                            <td class="sorting_1">{{$place->title}}</td>
 
                                             <td>{{ @$place->page->name}}</td>
                                             <td>{{$place->created_at->toDateString()}}</td>

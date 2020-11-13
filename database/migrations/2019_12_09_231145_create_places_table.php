@@ -15,8 +15,10 @@ class CreatePlacesTable extends Migration
     {
         Schema::create('places', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('url');
-
+            $table->string('title');
+            $table->string('title_ar');
+            $table->text('desc');
+            $table->text('desc_ar');
             $table->integer('page_id')->nullable()->unsigned();
             $table->foreign('page_id')->references('id')->on('pages')->onDelete('cascade');
             $table->integer('image_id')->nullable()->unsigned();

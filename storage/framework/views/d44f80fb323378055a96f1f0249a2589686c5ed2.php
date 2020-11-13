@@ -153,15 +153,15 @@
     <!-- =========== End Navbar =========== -->
 <!-- =========== Start Icons  =========== -->
     <div class="fix-icons">
-      <a href="#" data-toggle="tooltip" data-placement="right" title="Facebook"
-        ><i class="fab fa-facebook-f"></i
+      <a href="<?php echo e(@$settings->Facebook); ?>" data-toggle="tooltip" data-placement="right" title="Facebook" target="_blank"
+        ><i class="fab fa-facebook-f" ></i
       ></a>
 
-      <a href="#" data-toggle="tooltip" data-placement="right" title="Phone"
+      <a href="tel:<?php echo e(@$settings->phone); ?>" data-toggle="tooltip" data-placement="right" title="Phone"
         ><i class="fas fa-phone-volume"></i
       ></a>
 
-      <a href="#" data-toggle="tooltip" data-placement="right" title="Whatsapp"
+      <a href="whatsapp://send?abid=<?php echo e(@$settings->phone); ?>&text=Hello" data-toggle="tooltip" data-placement="right" title="Whatsapp"
         ><i class="fab fa-whatsapp"></i
       ></a>
     </div>
@@ -175,7 +175,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <img class="mb-5" src="images/logo-footer.png" alt="logo footer" />
+            <img class="mb-5" src="<?php echo e(url('/img/logo/'.@$settings->logoFooter->name)); ?>" alt="logo footer" />
             <?php if(App::isLocale('ar')): ?>
               <?php echo @$settings->footer_text_ar; ?>
 

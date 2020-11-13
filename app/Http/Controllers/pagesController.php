@@ -22,17 +22,30 @@ class pagesController extends Controller
     // show  page
     public function show($id)
     {
-
         $page = pages::findOrFail($id);
-        $places = places::where('page_id', $page->id)->paginate(9);
-        return view('pages.show', compact(['page', 'places']));
+        $place = places::where('page_id', $page->id)->first();
+        $places = places::where('id', '!=', $place->id )->where('page_id', $page->id)->orderBy('id', 'DESC')->get()->take(5);
+        return view('pages.show', compact(['page', 'places', 'place']));
     }
     // show  post
-    public function places($id)
+    public function place($id)
     {
         $place = places::findOrFail($id);
-        $places = places::where('id', '!=', $place->id )->orderBy('id', 'decs')->get()->take(3);
+        $places = places::where('id', '!=', $place->id )->where('page_id', $place->page_id)->orderBy('id', 'decs')->get()->take(5);
         return view('pages.place', compact(['place', 'places']));
+    }
+
+    public function search(Request $request)
+    {
+        if ($request->title) {
+            $title = $request->title;
+            $places = places::where('title', 'LIKE', "%{$title}%")->orWhere('title_ar', 'LIKE', "%{$title}%")->orderBy('id', 'decs')->get()->take(10);
+            return view('pages.search', compact([ 'places']));
+        } elseif ($request->title == null) {
+            $places = places::orderBy('id', 'decs')->get()->take(10);
+            return view('pages.search', compact([ 'places']));
+        }
+        return view('errors.404');
     }
     // show  post
     public function requests(Request $request,$id)

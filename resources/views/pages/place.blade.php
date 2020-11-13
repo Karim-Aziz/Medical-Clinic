@@ -1,61 +1,65 @@
 @php
-if (Session::get('app_locale') == 'ar') {
-App::setLocale('ar');
-} else {
-App::setLocale('en');
-Session::put(App::setLocale('en'));
-}
+    if (Session::get('app_locale') == 'ar') {
+        App::setLocale('ar');
+    } else {
+        App::setLocale('en');
+        Session::put(App::setLocale('en'));
+    }
 @endphp
-@extends('layouts.app')
-@section('content')
-  <!-- Start About Page -->
-  <div class="back-color">
-    <div class="container">
-      <h1>@lang('Portfolio')</h1>
-    </div>
-  </div>
-  <!-- End About Page -->
-@if ($pages->count() > 0)
- <div class="portfolio" data-aos="fade-up" data-aos-duration="3000">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <ul class="filters text-center">
-            <li class="active" data-filter="*"><a href="#!">@lang('All')</a></li>
-            @foreach ($pages as $page)
-            @if (App::isLocale('ar'))
-                <li data-filter=".{{$page->name}}"><a href="#!">{{$page->name_ar}}</a></li>
-            @else
-                <li data-filter=".{{$page->name}}"><a href="#!">{{$page->name}}</a></li>
-            @endif
-            @endforeach
-          </ul>
-          <div class="projects">
-            <div class="row">
-  @foreach ($pages as $page)
-      @foreach (@$page->places as $place)
-      <!-- Start Web Projects -->
-        <div class="col-lg-4 item {{$page->name}}">
-          <div class="card">
-            <div class="card-head">
-              <img src="{{'/img/places_images/'.@$place->image->name}}" alt="" class="img-fluid card-img" />
-            </div>
 
-            <div class="card-body text-center">
-              <a href="{{$place->url}}" class="btn btn-lg card-btn">@lang('See Project')</a>
-            </div>
+@extends('layouts.app')
+@section('title', @$place->name)
+@section('content')
+<!-- =========== Start Services Page =========== -->
+    <div class="all-services @if (App::isLocale('ar'))  text-right  @endif ">
+      <div class="container">
+        <div class="row" data-aos="zoom-in" data-aos-duration="1500">
+          <div class="col-md-9">
+            @if ($place)
+              <div class="all-ser-info">
+                <img src="{{ @$place->image->name ? '/img/places_images/'.$place->image->name : url('/dist/img/user2-160x160.jpg')}}" alt="Services image" />
+                <h2>
+                  @if (App::isLocale('ar'))
+                    {{ @$place->title_ar }}
+                  @else
+                    {{ @$place->title }}
+                  @endif
+                </h2>
+                @if (App::isLocale('ar'))
+                  {!! @$place->desc_ar !!}
+                @else
+                  {!! @$place->desc !!}
+                @endif
+              </div>
+            @endif
+
           </div>
-        </div>
-      @endforeach
-  @endforeach
+          <div class="col-md-3">
+            <div class="show-ser">
+              <form class="form-inline">
+                <input class="form-control" placeholder="Search..." />
+                <button type="submit"><i class="fas fa-search"></i></button>
+              </form>
+              <h4>@lang('All Services')</h4>
+              <ul class="list-group list-group-flush">
+                @if (count($places) > 0)
+                    @foreach ($places as $place)
+                      <li class="list-group-item list-group-item-action list-group-item-light" >
+                        @if (App::isLocale('ar'))
+                          <a href="{{ url('/pages/place/'.$place->id)}}">{{ $place->title_ar }}</a>
+                        @else
+                          <a href="{{ url('/pages/place/'.$place->id)}}">{{ $place->title }}</a>
+                        @endif
+                      </li>
+                    @endforeach
+                @endif
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-@endif
+    <!-- =========== End Services Page =========== -->
 
 
 @endsection
-

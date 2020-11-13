@@ -8,11 +8,15 @@ class settings extends Model
 {
 
     protected $table = 'settings';
-    protected $fillable = ['phone', 'contact_us_ar', 'contact_us', 'email', 'location', 'logo_id', 'YouTube', 'Instegram', 'Twitter', 'Facebook', 'footer_text', 'footer_text_ar'];
+    protected $fillable = ['phone', 'contact_us_ar', 'contact_us', 'email', 'location', 'logo_id', 'YouTube', 'Instegram', 'Twitter', 'Facebook', 'footer_text', 'footer_text_ar', 'logo_footer_id'];
 
     public function logo()
     {
         return $this->hasOne('App\Image', 'id', 'logo_id');
+    }
+    public function logoFooter()
+    {
+        return $this->hasOne('App\Image', 'id', 'logo_footer_id');
     }
 
     public function homeLogo()
@@ -56,6 +60,9 @@ class settings extends Model
         ];
         if ($request->file('logo_id') != null) {
             $credentials['logo_id'] = self::file($request->file('logo_id'));
+        }
+        if ($request->file('logo_footer_id') != null) {
+            $credentials['logo_footer_id'] = self::file($request->file('logo_footer_id'));
         }
 
         return $credentials;
