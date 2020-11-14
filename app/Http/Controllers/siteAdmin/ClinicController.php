@@ -16,9 +16,9 @@ class ClinicController extends Controller
     // all Articals CAtegories index
     public function index()
     {
-        $Clinic = Clinic::all();
+        $Clinics = Clinic::all();
         //return view('errors.404');
-        return view('siteAdmin.Clinic.index', compact('Clinic'));
+        return view('siteAdmin.Clinic.index', compact('Clinics'));
     }
 
     // add new Articals CAtegories

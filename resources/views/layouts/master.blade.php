@@ -319,7 +319,7 @@
                 Anything you want
             </div>
             <!-- Default to the left -->
-            <strong>Copyright &copy; 2019 <a href="https://vu-de.netlify.app/">Vu Digital</a>.</strong> All rights
+            <strong>Copyright &copy; 2019 <a href="https://vudigitalsolution.com/">Vu Digital</a>.</strong> All rights
             reserved.
         </footer>
 

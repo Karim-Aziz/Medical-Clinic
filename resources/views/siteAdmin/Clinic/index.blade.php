@@ -3,7 +3,7 @@
 @section('content')
 <section class="content-header">
     <h1>
-       categories
+       Clinics
     </h1>
 </section>
 <div class="row">
@@ -23,40 +23,92 @@
             <div class="box">
                 <!-- /.box-header -->
                 <div class="box-body">
-                    @if ($pages->count() > 0)
-                        @foreach ($pages as $page)
-                            <div class="modal fade" id="modal-default{{$page->id}}" style="display: none;">
+                    @if ($Clinics->count() > 0)
+                        @foreach ($Clinics as $Clinic)
+                            <div class="modal fade" id="modal-default{{$Clinic->id}}" style="display: none;">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">×</span></button>
-                                            <h4 class="modal-title">Edit category </h4>
+                                            <h4 class="modal-title">Edit Clinic </h4>
                                         </div>
 
 
                                         <div class="modal-body">
-                                        <form role="form" action="{{url('/siteAdmin/pages/edit/'.$page->id)}}" method="post" enctype="multipart/form-data">
+                                        <form role="form" action="{{url('/siteAdmin/Clinic/edit/'.$Clinic->id)}}" method="post" enctype="multipart/form-data">
 
                                             {{ csrf_field() }}
                                             <div class="box-body">
                                                 <div class="form-group">
-                                                    <label>Name</label>
-                                                    <input name="name" type="text" class="form-control"
-                                                        value="{{old('name')? old('name'): $page->name}}">
-                                                    @if ($errors->has('name'))
+                                                    <label>title</label>
+                                                    <input name="title" type="text" class="form-control"
+                                                        value="{{old('title')? old('title'): $Clinic->title}}">
+                                                    @if ($errors->has('title'))
                                                     <span class="help-block">
-                                                        <strong>{{ $errors->first('name') }}</strong>
+                                                        <strong>{{ $errors->first('title') }}</strong>
                                                     </span>
                                                     @endif
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Name Ar</label>
-                                                    <input name="name_ar" type="text" class="form-control"
-                                                        value="{{old('name_ar')? old('name_ar'): $page->name_ar}}">
-                                                    @if ($errors->has('name_ar'))
+                                                    <label>title Ar</label>
+                                                    <input name="title_ar" type="text" class="form-control"
+                                                        value="{{old('title_ar')? old('title_ar'): $Clinic->title_ar}}">
+                                                    @if ($errors->has('title_ar'))
                                                     <span class="help-block">
-                                                        <strong>{{ $errors->first('name_ar') }}</strong>
+                                                        <strong>{{ $errors->first('title_ar') }}</strong>
+                                                    </span>
+                                                    @endif
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>time</label>
+                                                    <input name="time" type="text" class="form-control"
+                                                        value="{{old('time')? old('time'): $Clinic->time}}">
+                                                    @if ($errors->has('time'))
+                                                    <span class="help-block">
+                                                        <strong>{{ $errors->first('time') }}</strong>
+                                                    </span>
+                                                    @endif
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>time Ar</label>
+                                                    <input name="time_ar" type="text" class="form-control"
+                                                        value="{{old('time_ar')? old('time_ar'): $Clinic->time_ar}}">
+                                                    @if ($errors->has('time_ar'))
+                                                    <span class="help-block">
+                                                        <strong>{{ $errors->first('time_ar') }}</strong>
+                                                    </span>
+                                                    @endif
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>address</label>
+                                                    <input name="address" type="text" class="form-control"
+                                                        value="{{old('address')? old('address'): $Clinic->address}}">
+                                                    @if ($errors->has('address'))
+                                                    <span class="help-block">
+                                                        <strong>{{ $errors->first('address') }}</strong>
+                                                    </span>
+                                                    @endif
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>address Ar</label>
+                                                    <input name="address_ar" type="text" class="form-control"
+                                                        value="{{old('address_ar')? old('address_ar'): $Clinic->address_ar}}">
+                                                    @if ($errors->has('address_ar'))
+                                                    <span class="help-block">
+                                                        <strong>{{ $errors->first('address_ar') }}</strong>
+                                                    </span>
+                                                    @endif
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>phone</label>
+                                                    <input name="phone" type="text" class="form-control"
+                                                        value="{{old('phone')? old('phone'): $Clinic->phone}}">
+                                                    @if ($errors->has('phone'))
+                                                    <span class="help-block">
+                                                        <strong>{{ $errors->first('phone') }}</strong>
                                                     </span>
                                                     @endif
                                                 </div>
@@ -91,10 +143,10 @@
                                         <tr role="row">
                                             <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1"  aria-sort="ascending"
-                                                aria-label="Name: activate to sort column descending">Name</th>
+                                                aria-label="title: activate to sort column descending">title</th>
                                             <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1"  aria-sort="ascending"
-                                                aria-label="Name: activate to sort column descending">Name Ar</th>
+                                                aria-label="title: activate to sort column descending">title Ar</th>
 
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1"
@@ -107,17 +159,17 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @if ($pages->count() > 0)
-                                        @foreach ($pages as $page)
+                                        @if ($Clinics->count() > 0)
+                                        @foreach ($Clinics as $Clinic)
                                         <tr role="row" class="odd">
-                                            <td class="sorting_1">{{$page->name}}</td>
-                                            <td class="sorting_1">{{$page->name_ar}}</td>
-                                            <td>{{$page->created_at->toDateString()}}</td>
+                                            <td class="sorting_1">{{$Clinic->title}}</td>
+                                            <td class="sorting_1">{{$Clinic->title_ar}}</td>
+                                            <td>{{$Clinic->created_at->toDateString()}}</td>
                                             <td>
-                                                <a data-toggle="modal" data-target="#modal-default{{$page->id}}" class="btn btn-success" title="edit" style="margin-bottom: 3px">
+                                                <a data-toggle="modal" data-target="#modal-default{{$Clinic->id}}" class="btn btn-success" title="edit" style="margin-bottom: 3px">
                                                     <i class="fa fa-pencil-square-o fa-fw"  aria-hidden="true"></i>
                                                 </a>
-                                                <a href="{{url('/siteAdmin/pages/delete/'. $page->id)}}"
+                                                <a href="{{url('/siteAdmin/Clinic/delete/'. $Clinic->id)}}"
                                                     class="btn btn-danger confirm" title="delete" style="margin-bottom: 3px">
                                                     <i class="fa fa-trash fa-fw" aria-hidden="true"></i>
                                                 </a>

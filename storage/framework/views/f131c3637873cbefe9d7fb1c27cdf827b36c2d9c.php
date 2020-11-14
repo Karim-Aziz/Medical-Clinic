@@ -18,24 +18,42 @@ Session::put(App::setLocale('en'));
             <div class="media mb-4">
               <i class="fas fa-user-md rounded-circle mr-4"></i>
               <div class="media-body">
-                <h5 class="mt-0">Holds</h5>
-                British Fellowship in Ear, Nose and Throat Diseases
+                <h5 class="mt-0"><?php echo app('translator')->getFromJson('Holds'); ?></h5>
+                <?php if(App::isLocale('ar')): ?>
+                  <?php echo e(@$about_as->hold_1_ar); ?>
+
+                <?php else: ?>
+                  <?php echo e(@$about_as->hold_1); ?>
+
+                <?php endif; ?>
               </div>
             </div>
 
             <div class="media mb-4">
               <i class="fas fa-book-open rounded-circle mr-4"></i>
               <div class="media-body">
-                <h5 class="mt-0">Holds</h5>
-                British Fellowship in Ear, Nose and Throat Diseases
+                <h5 class="mt-0"><?php echo app('translator')->getFromJson('Holds'); ?></h5>
+                <?php if(App::isLocale('ar')): ?>
+                  <?php echo e(@$about_as->hold_2_ar); ?>
+
+                <?php else: ?>
+                  <?php echo e(@$about_as->hold_2); ?>
+
+                <?php endif; ?>
               </div>
             </div>
 
             <div class="media mb-4">
               <i class="fas fa-calendar-alt rounded-circle mr-4"></i>
               <div class="media-body">
-                <h5 class="mt-0">Holds</h5>
-                British Fellowship in Ear, Nose and Throat Diseases
+                <h5 class="mt-0"><?php echo app('translator')->getFromJson('Holds'); ?></h5>
+                <?php if(App::isLocale('ar')): ?>
+                  <?php echo e(@$about_as->hold_3_ar); ?>
+
+                <?php else: ?>
+                  <?php echo e(@$about_as->hold_3); ?>
+
+                <?php endif; ?>
               </div>
             </div>
           </div>
@@ -48,24 +66,42 @@ Session::put(App::setLocale('en'));
             <div class="media mb-4">
               <i class="fas fa-stethoscope rounded-circle mr-4"></i>
               <div class="media-body">
-                <h5 class="mt-0">Holds</h5>
-                British Fellowship in Ear, Nose and Throat Diseases
+                <h5 class="mt-0"><?php echo app('translator')->getFromJson('Holds'); ?></h5>
+                <?php if(App::isLocale('ar')): ?>
+                  <?php echo e(@$about_as->hold_4_ar); ?>
+
+                <?php else: ?>
+                  <?php echo e(@$about_as->hold_4); ?>
+
+                <?php endif; ?>
               </div>
             </div>
 
             <div class="media mb-4">
               <i class="fas fa-user-graduate rounded-circle mr-4"></i>
               <div class="media-body">
-                <h5 class="mt-0">Holds</h5>
-                British Fellowship in Ear, Nose and Throat Diseases
+                <h5 class="mt-0"><?php echo app('translator')->getFromJson('Holds'); ?></h5>
+                <?php if(App::isLocale('ar')): ?>
+                  <?php echo e(@$about_as->hold_5_ar); ?>
+
+                <?php else: ?>
+                  <?php echo e(@$about_as->hold_5); ?>
+
+                <?php endif; ?>
               </div>
             </div>
 
             <div class="media mb-4">
               <i class="fas fa-users rounded-circle mr-4"></i>
               <div class="media-body">
-                <h5 class="mt-0">Holds</h5>
-                British Fellowship in Ear, Nose and Throat Diseases
+                <h5 class="mt-0"><?php echo app('translator')->getFromJson('Holds'); ?></h5>
+                <?php if(App::isLocale('ar')): ?>
+                  <?php echo e(@$about_as->hold_6_ar); ?>
+
+                <?php else: ?>
+                  <?php echo e(@$about_as->hold_6); ?>
+
+                <?php endif; ?>
               </div>
             </div>
           </div>

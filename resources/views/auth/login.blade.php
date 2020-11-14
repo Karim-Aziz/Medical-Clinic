@@ -155,7 +155,7 @@
 
         </form>
         <div class="custom-a">
-            <a href="https://vu-de.netlify.app/">Designed by Simle Pure</a>
+            <a href="https://vudigitalsolution.com/">Designed by Simle Pure</a>
         </div>
 
     </div>

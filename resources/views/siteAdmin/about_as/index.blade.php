@@ -42,63 +42,127 @@
                                         {{ csrf_field() }}
                                         <div class="box-body">
                                             <div class="form-group">
-                                                <label>about company</label>
-                                                <textarea id="about_company" class="form-control ckeditor" name="about_company" required>{{old('about_company')? old('about_company'): $service->about_company}}</textarea>
-                                                @if ($errors->has('about_company'))
+                                                <label>hold_1</label>
+                                                <input id="hold_1" type="text" class="form-control" name="hold_1" value="{{old('hold_1')? old('hold_1'): $service->hold_1}}" required autofocus>
+
+                                                @if ($errors->has('hold_1'))
                                                 <span class="help-block">
-                                                    <strong>{{ $errors->first('about_company') }}</strong>
+                                                    <strong>{{ $errors->first('hold_1') }}</strong>
                                                 </span>
                                                 @endif
                                             </div>
                                             <div class="form-group">
-                                                <label>about company ar</label>
-                                                <textarea id="about_company_ar" class="form-control ckeditor" name="about_company_ar"
-                                                    required>{{old('about_company_ar')? old('about_company_ar'): $service->about_company_ar}}</textarea>
-                                                @if ($errors->has('about_company_ar'))
+                                                <label>hold_1_ar</label>
+                                                <input id="hold_1_ar" type="text" class="form-control" name="hold_1_ar" value="{{old('hold_1_ar')? old('hold_1_ar'): $service->hold_1_ar}}" required autofocus>
+
+                                                @if ($errors->has('hold_1_ar'))
                                                 <span class="help-block">
-                                                    <strong>{{ $errors->first('about_company_ar') }}</strong>
+                                                    <strong>{{ $errors->first('hold_1_ar') }}</strong>
                                                 </span>
                                                 @endif
                                             </div>
                                             <div class="form-group">
-                                                <label>mission</label>
-                                                <textarea id="mission" class="form-control ckeditor" name="mission"
-                                                    required>{{old('mission')? old('mission'): $service->mission}}</textarea>
-                                                @if ($errors->has('mission'))
+                                                <label>hold_2</label>
+                                                <input id="hold_2" type="text" class="form-control" name="hold_2" value="{{old('hold_2')? old('hold_2'): $service->hold_2}}" required autofocus>
+
+                                                @if ($errors->has('hold_2'))
                                                 <span class="help-block">
-                                                    <strong>{{ $errors->first('mission') }}</strong>
+                                                    <strong>{{ $errors->first('hold_2') }}</strong>
                                                 </span>
                                                 @endif
                                             </div>
                                             <div class="form-group">
-                                                <label>mission ar</label>
-                                                <textarea id="mission_ar" class="form-control ckeditor" name="mission_ar" required>{{old('mission_ar')? old('mission_ar'): $service->mission_ar}}</textarea>
-                                                @if ($errors->has('mission_ar'))
+                                                <label>hold_2_ar</label>
+                                                <input id="hold_2_ar" type="text" class="form-control" name="hold_2_ar" value="{{old('hold_2_ar')? old('hold_2_ar'): $service->hold_2_ar}}" required autofocus>
+
+                                                @if ($errors->has('hold_2_ar'))
                                                 <span class="help-block">
-                                                    <strong>{{ $errors->first('mission_ar') }}</strong>
+                                                    <strong>{{ $errors->first('hold_2_ar') }}</strong>
                                                 </span>
                                                 @endif
                                             </div>
                                             <div class="form-group">
-                                                <label>vission</label>
-                                                <textarea id="vission" class="form-control ckeditor" name="vission"
-                                                    required>{{old('vission')? old('vission'): $service->vission}}</textarea>
-                                                @if ($errors->has('vission'))
+                                                <label>hold_3</label>
+                                                <input id="hold_3" type="text" class="form-control" name="hold_3" value="{{old('hold_3')? old('hold_3'): $service->hold_3}}" required autofocus>
+
+                                                @if ($errors->has('hold_3'))
                                                 <span class="help-block">
-                                                    <strong>{{ $errors->first('vission') }}</strong>
+                                                    <strong>{{ $errors->first('hold_3') }}</strong>
                                                 </span>
                                                 @endif
                                             </div>
                                             <div class="form-group">
-                                                <label>vission_ar</label>
-                                                <textarea id="vission_ar" class="form-control ckeditor" name="vission_ar" required>{{old('vission_ar')? old('vission_ar'): $service->vission_ar}}</textarea>
-                                                @if ($errors->has('vission_ar'))
+                                                <label>hold_3_ar</label>
+                                                <input id="hold_3_ar" type="text" class="form-control" name="hold_3_ar" value="{{old('hold_3_ar')? old('hold_3_ar'): $service->hold_3_ar}}" required autofocus>
+
+                                                @if ($errors->has('hold_3_ar'))
                                                 <span class="help-block">
-                                                    <strong>{{ $errors->first('vission_ar') }}</strong>
+                                                    <strong>{{ $errors->first('hold_3_ar') }}</strong>
                                                 </span>
                                                 @endif
                                             </div>
-                                            
+                                            <div class="form-group">
+                                                <label>hold_4</label>
+                                                <input id="hold_4" type="text" class="form-control" name="hold_4" value="{{old('hold_4')? old('hold_4'): $service->hold_4}}" required autofocus>
+
+                                                @if ($errors->has('hold_4'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('hold_4') }}</strong>
+                                                </span>
+                                                @endif
+                                            </div>
+                                            <div class="form-group">
+                                                <label>hold_4_ar</label>
+                                                <input id="hold_4_ar" type="text" class="form-control" name="hold_4_ar" value="{{old('hold_4_ar')? old('hold_4_ar'): $service->hold_4_ar}}" required autofocus>
+
+                                                @if ($errors->has('hold_4_ar'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('hold_4_ar') }}</strong>
+                                                </span>
+                                                @endif
+                                            </div>
+                                            <div class="form-group">
+                                                <label>hold_5</label>
+                                                <input id="hold_5" type="text" class="form-control" name="hold_5" value="{{old('hold_5')? old('hold_5'): $service->hold_5}}" required autofocus>
+
+                                                @if ($errors->has('hold_5'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('hold_5') }}</strong>
+                                                </span>
+                                                @endif
+                                            </div>
+                                            <div class="form-group">
+                                                <label>hold_5_ar</label>
+                                                <input id="hold_5_ar" type="text" class="form-control" name="hold_5_ar" value="{{old('hold_5_ar')? old('hold_5_ar'): $service->hold_5_ar}}" required autofocus>
+
+                                                @if ($errors->has('hold_5_ar'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('hold_5_ar') }}</strong>
+                                                </span>
+                                                @endif
+                                            </div>
+                                            <div class="form-group">
+                                                <label>hold_6</label>
+                                                <input id="hold_6" type="text" class="form-control" name="hold_6" value="{{old('hold_6')? old('hold_6'): $service->hold_6}}" required autofocus>
+
+                                                @if ($errors->has('hold_6'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('hold_6') }}</strong>
+                                                </span>
+                                                @endif
+                                            </div>
+                                            <div class="form-group">
+                                                <label>hold_6_ar</label>
+                                                <input id="hold_6_ar" type="text" class="form-control" name="hold_6_ar" value="{{old('hold_6_ar')? old('hold_6_ar'): $service->hold_6_ar}}" required autofocus>
+
+                                                @if ($errors->has('hold_6_ar'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('hold_6_ar') }}</strong>
+                                                </span>
+                                                @endif
+                                            </div>
+
+
                                             <div class="box-footer">
                                                 <input type="submit" value="update" class="btn btn-primary">
                                             </div>
@@ -125,47 +189,37 @@
                             <div class="col-sm-12">
                                 <div class="table-responsive">
                                     <table id="example1" class="table table-bordered table-hover dataTable no-footer"
-                                        role="grid" aria-describedby="example1_info">
+                                        role="grid" aria-describedby="example1_hold">
                                         <thead>
                                             <tr role="row">
-                                                
-                                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                    colspan="1"
-                                                    aria-label="service1: activate to sort column ascending">
-                                                    about company
-                                                </th>
-                                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                    colspan="1"
-                                                    aria-label="service1_ar: activate to sort column ascending">
-                                                    mission
-                                                </th>
-                                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                    colspan="1"
-                                                    aria-label="service2: activate to sort column ascending">
-                                                    vission
-                                                </th>
-                                                
+                                                <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
+                                                    colspan="1"  aria-sort="ascending"
+                                                    aria-label="hold_1: activate to sort column descending">hold_1</th>
+                                                <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
+                                                    colspan="1"  aria-sort="ascending"
+                                                    aria-label="hold_1_ar: activate to sort column descending">hold_1_ar</th>
+
 
                                                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                    colspan="1" aria-label="Actions: activate to sort column ascending">
-                                                    Actions</th>
+                                                    colspan="1"
+                                                    aria-label="Actions: activate to sort column ascending">Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @if ($about_as->count() > 0)
                                             @foreach ($about_as as $service)
                                             <tr role="row" class="odd">
-                                                <td>{!! $service->about_company !!}</td>
-                                                <td>{!! $service->mission !!}</td>
-                                                <td>{!! $service->vission !!}</td>
-                                                
+                                                <td class="sorting_1">{{$service->hold_1}}</td>
+                                                <td>{{$service->hold_1_ar}}</td>
+
+
                                                 <td>
                                                     <a data-toggle="modal"
                                                         data-target="#modal-default{{$service->id}}"
                                                         class="btn btn-success" title="edit" style="margin-bottom: 3px">
                                                         <i class="fa fa-pencil-square-o fa-fw" aria-hidden="true"></i>
                                                     </a>
-                                                    {{-- 
+                                                    {{--
                                                 <a href="{{url('/siteAdmin/service/delete/'. $service->id)}}"
                                                     class="btn btn-danger confirm" title="delete" style="margin-bottom:
                                                     3px">
@@ -191,12 +245,4 @@
         </div>
     </div>
 </section>
-@endsection
-@section('js')
-<script src="{{ url('/ckeditor/ckeditor.js') }}"></script>
-<script type="application/javascript">
-    $(document).ready(function () {
-        CKEDITOR.config.contentsLangDirection = 'rtl';
-    });
-</script>
 @endsection

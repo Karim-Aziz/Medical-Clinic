@@ -18,24 +18,36 @@ Session::put(App::setLocale('en'));
             <div class="media mb-4">
               <i class="fas fa-user-md rounded-circle mr-4"></i>
               <div class="media-body">
-                <h5 class="mt-0">Holds</h5>
-                British Fellowship in Ear, Nose and Throat Diseases
+                <h5 class="mt-0">@lang('Holds')</h5>
+                @if (App::isLocale('ar'))
+                  {{ @$about_as->hold_1_ar }}
+                @else
+                  {{ @$about_as->hold_1 }}
+                @endif
               </div>
             </div>
 
             <div class="media mb-4">
               <i class="fas fa-book-open rounded-circle mr-4"></i>
               <div class="media-body">
-                <h5 class="mt-0">Holds</h5>
-                British Fellowship in Ear, Nose and Throat Diseases
+                <h5 class="mt-0">@lang('Holds')</h5>
+                @if (App::isLocale('ar'))
+                  {{ @$about_as->hold_2_ar }}
+                @else
+                  {{ @$about_as->hold_2 }}
+                @endif
               </div>
             </div>
 
             <div class="media mb-4">
               <i class="fas fa-calendar-alt rounded-circle mr-4"></i>
               <div class="media-body">
-                <h5 class="mt-0">Holds</h5>
-                British Fellowship in Ear, Nose and Throat Diseases
+                <h5 class="mt-0">@lang('Holds')</h5>
+                @if (App::isLocale('ar'))
+                  {{ @$about_as->hold_3_ar }}
+                @else
+                  {{ @$about_as->hold_3 }}
+                @endif
               </div>
             </div>
           </div>
@@ -48,24 +60,36 @@ Session::put(App::setLocale('en'));
             <div class="media mb-4">
               <i class="fas fa-stethoscope rounded-circle mr-4"></i>
               <div class="media-body">
-                <h5 class="mt-0">Holds</h5>
-                British Fellowship in Ear, Nose and Throat Diseases
+                <h5 class="mt-0">@lang('Holds')</h5>
+                @if (App::isLocale('ar'))
+                  {{ @$about_as->hold_4_ar }}
+                @else
+                  {{ @$about_as->hold_4 }}
+                @endif
               </div>
             </div>
 
             <div class="media mb-4">
               <i class="fas fa-user-graduate rounded-circle mr-4"></i>
               <div class="media-body">
-                <h5 class="mt-0">Holds</h5>
-                British Fellowship in Ear, Nose and Throat Diseases
+                <h5 class="mt-0">@lang('Holds')</h5>
+                @if (App::isLocale('ar'))
+                  {{ @$about_as->hold_5_ar }}
+                @else
+                  {{ @$about_as->hold_5 }}
+                @endif
               </div>
             </div>
 
             <div class="media mb-4">
               <i class="fas fa-users rounded-circle mr-4"></i>
               <div class="media-body">
-                <h5 class="mt-0">Holds</h5>
-                British Fellowship in Ear, Nose and Throat Diseases
+                <h5 class="mt-0">@lang('Holds')</h5>
+                @if (App::isLocale('ar'))
+                  {{ @$about_as->hold_6_ar }}
+                @else
+                  {{ @$about_as->hold_6 }}
+                @endif
               </div>
             </div>
           </div>
