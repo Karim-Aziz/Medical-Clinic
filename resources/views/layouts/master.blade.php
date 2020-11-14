@@ -264,6 +264,29 @@
 
                         </ul>
                     </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-comment" aria-hidden="true"></i>
+                            <span>Testimonial</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+
+                            <li>
+                                <a href="/siteAdmin/Testimonial/add">
+                                    <i class="fa fa-circle-o"></i> Add Testimonial
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/siteAdmin/Testimonial/show">
+                                    <i class="fa fa-circle-o"></i> Show / Edit Testimonial
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
 
                     <li class="treeview">
                         <a href="#">
