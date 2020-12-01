@@ -111,11 +111,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav m-auto">
-            <a class="nav-link active ml-2" href="{{ url('/') }}">@lang('Home')</a>
-            <a class="nav-link ml-2" href="{{ url('/about_us') }}">@lang('About Doctor')</a>
+            <a class="nav-link {{ Request::is('/') ? 'active' : '' }} ml-2" href="{{ url('/') }}">@lang('Home')</a>
+            <a class="nav-link {{ Request::is('about_us') ? 'active' : '' }} ml-2" href="{{ url('/about_us') }}">@lang('About Doctor')</a>
             <li class="nav-item dropdown ml-2">
               <a
-                class="nav-link dropdown-toggle"
+                class="nav-link dropdown-toggle {{ Request::is('pages/*') ? 'active' : '' }}"
                 href="#"
                 id="navbarDropdown"
                 role="button"
@@ -140,7 +140,7 @@
                 @endif
               </div>
             </li>
-            <a class="nav-link ml-2" href="{{ url('/contact') }}">@lang('Contact Us')</a>
+            <a class="nav-link ml-2 {{ Request::is('contact') ? 'active' : '' }} " href="{{ url('/contact') }}">@lang('Contact Us')</a>
           </div>
           <div class="lang">
             <a class="nav-link ml-2 @if (App::isLocale('en'))  active  @endif" href="{{url('/en')}}">En</a>

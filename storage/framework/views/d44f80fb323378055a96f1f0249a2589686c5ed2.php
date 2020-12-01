@@ -112,11 +112,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav m-auto">
-            <a class="nav-link active ml-2" href="<?php echo e(url('/')); ?>"><?php echo app('translator')->getFromJson('Home'); ?></a>
-            <a class="nav-link ml-2" href="<?php echo e(url('/about_us')); ?>"><?php echo app('translator')->getFromJson('About Doctor'); ?></a>
+            <a class="nav-link <?php echo e(Request::is('/') ? 'active' : ''); ?> ml-2" href="<?php echo e(url('/')); ?>"><?php echo app('translator')->getFromJson('Home'); ?></a>
+            <a class="nav-link <?php echo e(Request::is('about_us') ? 'active' : ''); ?> ml-2" href="<?php echo e(url('/about_us')); ?>"><?php echo app('translator')->getFromJson('About Doctor'); ?></a>
             <li class="nav-item dropdown ml-2">
               <a
-                class="nav-link dropdown-toggle"
+                class="nav-link dropdown-toggle <?php echo e(Request::is('pages/*') ? 'active' : ''); ?>"
                 href="#"
                 id="navbarDropdown"
                 role="button"
@@ -141,7 +141,7 @@
                 <?php endif; ?>
               </div>
             </li>
-            <a class="nav-link ml-2" href="<?php echo e(url('/contact')); ?>"><?php echo app('translator')->getFromJson('Contact Us'); ?></a>
+            <a class="nav-link ml-2 <?php echo e(Request::is('contact') ? 'active' : ''); ?> " href="<?php echo e(url('/contact')); ?>"><?php echo app('translator')->getFromJson('Contact Us'); ?></a>
           </div>
           <div class="lang">
             <a class="nav-link ml-2 <?php if(App::isLocale('en')): ?>  active  <?php endif; ?>" href="<?php echo e(url('/en')); ?>">En</a>
