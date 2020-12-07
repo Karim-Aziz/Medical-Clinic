@@ -159,10 +159,9 @@
       <a href="tel:{{ @$settings->phone }}" data-toggle="tooltip" data-placement="right" title="Phone"
         ><i class="fas fa-phone-volume"></i
       ></a>
-
-      <a href="whatsapp://send?abid={{ @$settings->phone }}&text=Hello" data-toggle="tooltip" data-placement="right" title="Whatsapp"
-        ><i class="fab fa-whatsapp"></i
-      ></a>
+      <a href="https://wa.me/{{ str_replace('+', '', @$settings->phone) }}/?text=Hello" data-toggle="tooltip"
+        data-placement="right" title="Whatsapp"><i class="fab fa-whatsapp"></i></a>
+      
     </div>
     <!-- =========== End Icons  =========== -->
 

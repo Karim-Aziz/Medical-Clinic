@@ -35,9 +35,8 @@ App::setLocale('en');
         ><i class="fas fa-phone-volume"></i
       ></a>
 
-      <a href="whatsapp://send?abid=<?php echo e(@$settings->phone); ?>&text=Hello" data-toggle="tooltip" data-placement="right" title="Whatsapp"
-        ><i class="fab fa-whatsapp"></i
-      ></a>
+      <a href="https://wa.me/<?php echo e(str_replace('+', '', @$settings->phone)); ?>/?text=Hello" data-toggle="tooltip"
+        data-placement="right" title="Whatsapp"><i class="fab fa-whatsapp"></i></a>
     </div>
     <!-- =========== End Icons  =========== -->
 
